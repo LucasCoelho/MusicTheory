@@ -187,4 +187,14 @@ class MusicTheoryTests: XCTestCase {
       "cFlatVIIdim in the key of C♭ Major returns the correct notes")
   }
 
+  func testWhatDegreeIsThisNote() {
+    let root = Note(name: "C♭")
+    let cFlatMajor = Key(note: root, quality: "major")
+
+    let cFlat = cFlatMajor.degree("C♭")
+    XCTAssertEqual(cFlat, "I", "cFlat is the I degree of cFlatMajor")
+    
+    let dFlat = cFlatMajor.degree("D♭")
+    XCTAssertEqual(dFlat, "II", "dFlat is the II degree of cFlatMajor")
+  }
 }

@@ -58,6 +58,15 @@ public class Key: Comparable {
 
     return chord
   }
+    
+  public func degree(noteName: String) -> String! {
+    let note = Note(name: noteName)
+    if let index = scale.notes.indexOf(note) {
+        return Music.Degrees[index]
+    } else {
+        return nil
+    }
+  }
 }
 
 public func <(lhs: Key, rhs: Key) -> Bool {
